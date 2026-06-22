@@ -68,17 +68,17 @@ describe('library board fit', () => {
           const bitmapBottom = bitmapTop + dimensions.viewportHeight;
 
           const sourceImageLeft =
-            dimensions.tabBleed - piece.source.col * dimensions.baseWidth;
+            dimensions.tabBleedX - piece.source.col * dimensions.baseWidth;
           const sourceImageTop =
-            dimensions.tabBleed - piece.source.row * dimensions.baseHeight;
+            dimensions.tabBleedY - piece.source.row * dimensions.baseHeight;
 
           expect(bitmapLeft + sourceImageLeft).toBeCloseTo(0, 6);
           expect(bitmapTop + sourceImageTop).toBeCloseTo(0, 6);
           expect(bitmapRight - bitmapLeft).toBeCloseTo(dimensions.viewportWidth, 6);
           expect(bitmapBottom - bitmapTop).toBeCloseTo(dimensions.viewportHeight, 6);
 
-          expect(bitmapLeft + dimensions.tabBleed).toBeCloseTo(cellLeft, 6);
-          expect(bitmapTop + dimensions.tabBleed).toBeCloseTo(cellTop, 6);
+          expect(bitmapLeft + dimensions.tabBleedX).toBeCloseTo(cellLeft, 6);
+          expect(bitmapTop + dimensions.tabBleedY).toBeCloseTo(cellTop, 6);
           expect(cellLeft + dimensions.baseWidth).toBeLessThanOrEqual(image.width + 1e-6);
           expect(cellTop + dimensions.baseHeight).toBeLessThanOrEqual(image.height + 1e-6);
         }

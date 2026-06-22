@@ -57,15 +57,21 @@ function drawPieceToDataUrl(
     ctx.scale(renderScale, renderScale);
 
     const path = new Path2D(
-      getPiecePath(piece.shape, dimensions.baseWidth, dimensions.baseHeight, dimensions.tabBleed, dimensions.tabBleed),
+      getPiecePath(
+        piece.shape,
+        dimensions.baseWidth,
+        dimensions.baseHeight,
+        dimensions.tabBleedX,
+        dimensions.tabBleedY,
+      ),
     );
 
     ctx.save();
     ctx.clip(path);
     ctx.drawImage(
       image,
-      dimensions.tabBleed - piece.source.col * dimensions.baseWidth,
-      dimensions.tabBleed - piece.source.row * dimensions.baseHeight,
+      dimensions.tabBleedX - piece.source.col * dimensions.baseWidth,
+      dimensions.tabBleedY - piece.source.row * dimensions.baseHeight,
       imageWidth,
       imageHeight,
     );

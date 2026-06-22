@@ -15,7 +15,8 @@ export function getPieceAspectRatio(imageAspectRatio: number, grid: GridSpec): n
 export interface PieceDimensions {
   baseWidth: number;
   baseHeight: number;
-  tabBleed: number;
+  tabBleedX: number;
+  tabBleedY: number;
   viewportWidth: number;
   viewportHeight: number;
 }
@@ -28,13 +29,15 @@ export interface BoardCellPlacement {
 }
 
 export function getPieceDimensionsFromBaseSize(baseWidth: number, baseHeight: number): PieceDimensions {
-  const tabBleed = Math.min(baseWidth, baseHeight) * TAB_BLEED_RATIO;
+  const tabBleedX = baseWidth * TAB_BLEED_RATIO;
+  const tabBleedY = baseHeight * TAB_BLEED_RATIO;
   return {
     baseWidth,
     baseHeight,
-    tabBleed,
-    viewportWidth: baseWidth + tabBleed * 2,
-    viewportHeight: baseHeight + tabBleed * 2,
+    tabBleedX,
+    tabBleedY,
+    viewportWidth: baseWidth + tabBleedX * 2,
+    viewportHeight: baseHeight + tabBleedY * 2,
   };
 }
 
@@ -57,10 +60,10 @@ export function getSourcePieceDimensions(
 }
 
 export function getBoardCellPlacement(dimensions: PieceDimensions): BoardCellPlacement {
-  const { baseWidth, baseHeight, tabBleed, viewportWidth, viewportHeight } = dimensions;
+  const { baseWidth, baseHeight, tabBleedX, tabBleedY, viewportWidth, viewportHeight } = dimensions;
   return {
-    leftPercent: (-tabBleed / baseWidth) * 100,
-    topPercent: (-tabBleed / baseHeight) * 100,
+    leftPercent: (-tabBleedX / baseWidth) * 100,
+    topPercent: (-tabBleedY / baseHeight) * 100,
     widthPercent: (viewportWidth / baseWidth) * 100,
     heightPercent: (viewportHeight / baseHeight) * 100,
   };
