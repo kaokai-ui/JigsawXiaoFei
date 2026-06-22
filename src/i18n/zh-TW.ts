@@ -1,7 +1,7 @@
 const zhTW = {
-  appTitle: '拼圖遊戲',
+  appTitle: '拼圖小飛',
   home: {
-    title: '拼圖遊戲',
+    title: '拼圖小飛',
     continueGame: '繼續遊戲',
     newGame: '開始新遊戲',
     settings: '設定',

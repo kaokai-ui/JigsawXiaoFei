@@ -6,7 +6,7 @@ describe('PieceBitmapImage', () => {
   it('allows board-cell pieces to extend beyond a single cell without global img clamps', () => {
     const { container } = render(
       <PieceBitmapImage
-        assetSrc="/images/test-piece.png"
+        assetSrc="images/test-piece.png"
         imageAspectRatio={1}
         grid={{ rows: 3, cols: 3, activeCells: 9 }}
         placement="board-cell"

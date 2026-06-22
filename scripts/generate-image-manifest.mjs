@@ -216,8 +216,8 @@ async function main() {
     entries.push({
       id,
       filename,
-      src: `/images/${toUrlPath(relative(PUBLIC_IMAGES_DIR, destPath))}`,
-      thumbnailSrc: `/images/${toUrlPath(relative(PUBLIC_IMAGES_DIR, thumbDestPath))}`,
+      src: `images/${toUrlPath(relative(PUBLIC_IMAGES_DIR, destPath))}`,
+      thumbnailSrc: `images/${toUrlPath(relative(PUBLIC_IMAGES_DIR, thumbDestPath))}`,
       alt: id,
       width: dimensions.width,
       height: dimensions.height,

@@ -62,10 +62,21 @@ describe('ImageSelectPage', () => {
   it('resolves square image counts before starting a game', async () => {
     const user = userEvent.setup();
 
-    vi.doMock('../../generated/imageManifest', async (importOriginal) => {
-      const original = await importOriginal<typeof import('../../generated/imageManifest')>();
-      return { ...original, __esModule: true };
-    });
+    vi.doMock('../../generated/imageManifest', () => ({
+      __esModule: true,
+      imageManifest: [
+        {
+          id: 'square',
+          filename: 'square.png',
+          src: 'images/square.webp',
+          thumbnailSrc: 'images/square-thumb.webp',
+          alt: 'square',
+          width: 900,
+          height: 900,
+          aspectRatio: 1,
+        },
+      ],
+    }));
 
     const { ImageSelectPage, useGameStore, useSettingsStore } = await loadImageSelectPage();
     useGameStore.getState().abandon();
@@ -77,17 +88,17 @@ describe('ImageSelectPage', () => {
       </BrowserRouter>,
     );
 
-    await user.click(screen.getByRole('button', { name: /005\.png/i }));
+    await user.click(screen.getByRole('button', { name: /square\.png/i }));
 
     expect(screen.getByText('9 pcs')).toBeInTheDocument();
-    expect(screen.getByText('16 pcs')).toBeInTheDocument();
     expect(screen.getByText('20 pcs')).toBeInTheDocument();
+    expect(screen.getByText('30 pcs')).toBeInTheDocument();
 
     await user.click(screen.getByText('9 pcs'));
 
     const session = useGameStore.getState().session;
     expect(session).not.toBeNull();
-    expect(session?.imageId).toBe('005');
+    expect(session?.imageId).toBe('square');
     expect(session?.pieceCount).toBe(9);
   });
 });

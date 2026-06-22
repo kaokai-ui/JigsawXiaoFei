@@ -61,7 +61,7 @@ describe('PuzzleBoard', () => {
 
     const images = container.querySelectorAll('img');
     expect(images).toHaveLength(1);
-    expect(images[0]?.getAttribute('src')).toBe('/images/005.png');
+    expect(images[0]?.getAttribute('src')).toBe('images/005.webp');
   });
 
   it('renders board ghost imagery only when the setting is enabled', () => {

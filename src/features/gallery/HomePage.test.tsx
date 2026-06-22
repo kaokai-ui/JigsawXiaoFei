@@ -21,7 +21,7 @@ describe('HomePage', () => {
 
   it('renders the app title', () => {
     renderHome();
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('拼圖遊戲');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('拼圖小飛');
   });
 
   it('shows the 開始新遊戲 link', () => {
