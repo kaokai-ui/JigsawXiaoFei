@@ -1,6 +1,8 @@
 import type { GridCell, GridSpec } from './types';
 
-const TAB_BLEED_RATIO = 0.34;
+// Keep rasterized piece tabs comfortably inside the bitmap viewport so
+// protrusions do not get clipped at the canvas edge on completed boards.
+const TAB_BLEED_RATIO = 0.4;
 
 export function getBoardAspectRatio(imageAspectRatio: number): number {
   return imageAspectRatio;

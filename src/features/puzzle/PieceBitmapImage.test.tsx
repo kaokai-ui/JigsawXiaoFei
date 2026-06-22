@@ -17,7 +17,7 @@ describe('PieceBitmapImage', () => {
     expect(img).not.toBeNull();
     expect(img?.style.maxWidth).toBe('none');
     expect(img?.style.maxHeight).toBe('none');
-    expect(img?.style.width).toBe('168%');
-    expect(img?.style.height).toBe('168%');
+    expect(img?.style.width).toBe('180%');
+    expect(img?.style.height).toBe('180%');
   });
 });
