@@ -1,0 +1,151 @@
+.page {
+  min-height: 100dvh;
+  padding: var(--space-lg) var(--space-md);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  transition: background-color var(--transition-fast);
+}
+
+.backButton:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.section {
+  margin-bottom: var(--space-xl);
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.countRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.countLabel {
+  min-width: 3em;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.countInput {
+  width: 5.5ch;
+  min-width: 4.25rem;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.countInput:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid rgba(var(--color-primary-rgb), 0.3);
+  outline-offset: 0;
+}
+
+.countInputError {
+  border-color: var(--color-error);
+}
+
+.countInputError:focus {
+  outline-color: rgba(var(--color-error), 0.3);
+}
+
+.resetButton {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  background: var(--color-surface);
+  min-height: 28px;
+}
+
+.resetButton:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.errorMessage {
+  color: var(--color-error);
+  font-size: 0.8125rem;
+  margin-left: var(--space-xs);
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.toggleRow input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.motionGroup {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.motionOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.motionOption input[type='radio'] {
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .countInput {
+    width: 7ch;
+    min-width: 5rem;
+  }
+}

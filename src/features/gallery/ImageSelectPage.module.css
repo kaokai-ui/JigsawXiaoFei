@@ -1,0 +1,183 @@
+.page {
+  min-height: 100dvh;
+  padding: var(--space-lg) var(--space-md);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  transition: background-color var(--transition-fast);
+}
+
+.backButton:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-md);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  gap: var(--space-md);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-md);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.card:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardThumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background-color: var(--color-border);
+}
+
+.cardName {
+  padding: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.difficultyOverlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.difficultyPanel {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-lg);
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.difficultyPanelTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.difficultyPreview {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-sm);
+  background-color: var(--color-border);
+}
+
+.difficultyButtons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.difficultyButton {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  min-height: 44px;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.difficultyButton:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.08);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.difficultyButton:active {
+  background-color: rgba(var(--color-primary-rgb), 0.16);
+}
+
+.difficultyPieceCount {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-left: var(--space-sm);
+}
+
+.cancelButton {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  border: none;
+  background: none;
+  min-height: 36px;
+}
+
+.cancelButton:hover {
+  color: var(--color-text);
+}
