@@ -18,7 +18,7 @@ describe('SettingsPage', () => {
     useSettingsStore.getState().resetToDefaults();
   });
 
-  it('renders the title 設定', () => {
+  it('renders the title', () => {
     renderSettings();
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('設定');
   });
@@ -36,7 +36,7 @@ describe('SettingsPage', () => {
     renderSettings();
     const checkboxes = screen.getAllByRole('checkbox');
     expect(checkboxes).toHaveLength(3);
-    expect(screen.getAllByText('顯示參考圖輪廓').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('顯示參考圖預覽').length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText('音效')).toBeInTheDocument();
     expect(screen.getByText('震動回饋')).toBeInTheDocument();
   });

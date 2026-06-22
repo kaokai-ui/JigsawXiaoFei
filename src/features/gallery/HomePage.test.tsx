@@ -24,14 +24,14 @@ describe('HomePage', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('拼圖小飛');
   });
 
-  it('shows the 開始新遊戲 link', () => {
+  it('shows the new game link', () => {
     renderHome();
     const link = screen.getByRole('link', { name: '開始新遊戲' });
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', '/images');
   });
 
-  it('shows the 設定 link', () => {
+  it('shows the settings link', () => {
     renderHome();
     const link = screen.getByRole('link', { name: '設定' });
     expect(link).toBeInTheDocument();
